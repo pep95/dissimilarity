@@ -11,7 +11,7 @@ In the experiment represented here the dataset movielens100k [1] has been used, 
 
 In chronological order, the first file to start is "user_user.py" which generates a table of user-user similarity based on the metrics chosen from those in the file "metrics.pdf".
 
-The python file "user_user.py" calls the files "metrics.py" and "open_db.py" and builds the table.
+The python file "user_user.py" calls the files "metriche.py" and "open_db.py" and builds the table.
 
 Then, to get the top 10 recommendations for each user, you need to start the file "pred.py" which generates a file containing the recommendations.
 
