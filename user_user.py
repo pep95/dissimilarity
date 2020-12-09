@@ -1,4 +1,4 @@
-from github.open_db import open_db
+from open_db import open_db
 import pandas as pd
 import numpy as np
 from scipy import sparse
@@ -78,15 +78,13 @@ class sparse_matrix:
 if __name__ == '__main__':
     
     '''apro training movielens con class opendb 100k con pandas'''
-    #tab = pd.read_csv(r"C:\Users\giusc\eclipse-workspace\tesi\u.data",sep="\t",names=["user_id","item_id","rating","timestamp"])
-    #tab = pd.read_csv(r"C:\Users\giusc\eclipse-workspace\tesi\test1\train_movielens.csv",sep=",")
-    input_path = input("Insert input path :\n")
-    output_path = input("Insert output path :\n")
-    metric = input("Wich metric do you want to use?\n")
-    lam = float(input("select the value of lambda"))
+    input_path = input("Insert input path (example train_movielens.csv):  \n")
+    output_path = input("Insert output path (example user_user_pad.csv):\n")
+    metric = input("Wich metric do you want to use? (example pad) \n")
+    lam = float(input("select the value of lambda (example 0.1)\n"))
     csr,rows_index,cols_index = open_db(input_path,type=1,sep=",").main()
     
-    '''inizializzo i dataframe per i risultati, uno per ogni formula'''
+    '''inizializzo il dataframe per i risultati'''
     sim = {"users":rows_index.keys()}
     final_table = pd.DataFrame(data=sim)
     final_table = final_table.set_index("users")

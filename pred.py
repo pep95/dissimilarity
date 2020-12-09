@@ -36,7 +36,7 @@ class rec:
         self.train = pd.read_csv(path_train).drop(columns=["Unnamed: 0"]).set_index("user_id")
           
         self.user_user = pd.read_csv(path_user_user).set_index("users")
-          
+                        
           
         self.neighbors = neighbor(self.user_user,self.n)
         
@@ -99,12 +99,10 @@ class rec:
     
 if __name__ == '__main__':
     
-    path_train = input("insert path of training set file\n")
-    print(pd.read_csv(path_train))
-    input()
-    path_user_user = input("insert path of user user table\n")
-    path_output = input("insert path of output file\n")
-    n = int(input("insert the number of neighbors\n"))
+    path_train = input("insert path of training set file (example train_movielens.csv)\n")
+    path_user_user = input("insert path of user user table (example user_user_pad.csv) \n")
+    path_output = input("insert path of output file (example pad.csv)\n")
+    n = int(input("insert the number of neighbors (example 50)\n"))
     
 
     
